@@ -20,6 +20,24 @@
       margin-bottom: 20px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
+    .buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    button {
+      background: #ff7e5f;
+      border: none;
+      color: white;
+      padding: 10px 16px;
+      margin: 4px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #eb6750;
+    }
     .schedule {
       background: rgba(255,255,255,0.9);
       border-radius: 12px;
@@ -46,9 +64,6 @@
     td {
       font-size: 1.05em;
     }
-    .icon {
-      margin-right: 8px;
-    }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -64,28 +79,63 @@
 </head>
 <body>
   <h1>🌟 Minha Rotina Diário</h1>
-  <div class="schedule">
-    <table>
-      <tr>
-        <th>Horário</th>
-        <th>Atividade</th>
-      </tr>
-      <tr><td>08:00 – 11:00</td><td>💼 Trabalho</td></tr>
-      <tr><td>11:00 – 11:25</td><td>🍽️ Almoço</td></tr>
-      <tr><td>11:25 – 12:30</td><td>🎮 Projeto de games/apps</td></tr>
-      <tr><td>12:30 – 13:00</td><td>🧘‍♂️ Pausa curta</td></tr>
-      <tr><td>13:00 – 18:15</td><td>💼 Trabalho</td></tr>
-      <tr><td>18:15 – 19:00</td><td>🎧 Descompressão</td></tr>
-      <tr><td>19:00 – 20:30</td><td>🎮 Projeto de games/apps</td></tr>
-      <tr><td>20:30 – 21:30</td><td>☕ Descanso / lazer</td></tr>
-      <tr><td>21:50 – 23:00</td><td>🏋️‍♂️ Academia</td></tr>
-      <tr><td>23:00 – 23:30</td><td>🧘‍♀️ Alongamento / relaxamento</td></tr>
-      <tr><td>23:30 – 00:15</td><td>🗣️ Espanhol (estudo leve)</td></tr>
-      <tr><td>00:15 – 07:30</td><td>💤 Sono</td></tr>
-    </table>
+
+  <div class="buttons">
+    <button onclick="mostrarRotina('segunda')">Seg a Qui</button>
+    <button onclick="mostrarRotina('sexta')">Sexta-feira</button>
   </div>
+
+  <div class="schedule" id="schedule">
+    <!-- Aqui entra a rotina via JavaScript -->
+  </div>
+
   <footer>
     Feito com ❤️ para manter o foco e a inspiração todos os dias
   </footer>
+
+  <script>
+    const rotinaSegQui = `
+      <table>
+        <tr><th>Horário</th><th>Atividade</th></tr>
+        <tr><td>08:00 – 11:00</td><td>💼 Trabalho</td></tr>
+        <tr><td>11:00 – 11:25</td><td>🍽️ Almoço</td></tr>
+        <tr><td>11:25 – 12:30</td><td>🎮 Projeto de games/apps</td></tr>
+        <tr><td>12:30 – 13:00</td><td>🧘‍♂️ Pausa curta</td></tr>
+        <tr><td>13:00 – 18:15</td><td>💼 Trabalho</td></tr>
+        <tr><td>18:15 – 19:00</td><td>🎧 Descompressão</td></tr>
+        <tr><td>19:00 – 20:30</td><td>🎮 Projeto de games/apps</td></tr>
+        <tr><td>20:30 – 21:30</td><td>☕ Descanso / lazer</td></tr>
+        <tr><td>21:50 – 23:00</td><td>🏋️‍♂️ Academia</td></tr>
+        <tr><td>23:00 – 23:30</td><td>🧘‍♀️ Alongamento / relaxamento</td></tr>
+        <tr><td>23:30 – 00:15</td><td>🗣️ Espanhol (estudo leve)</td></tr>
+        <tr><td>00:15 – 07:30</td><td>💤 Sono</td></tr>
+      </table>
+    `;
+
+    const rotinaSexta = `
+      <table>
+        <tr><th>Horário</th><th>Atividade</th></tr>
+        <tr><td>08:00 – 11:00</td><td>💼 Trabalho</td></tr>
+        <tr><td>11:00 – 11:25</td><td>🍽️ Almoço</td></tr>
+        <tr><td>11:25 – 12:30</td><td>🎮 Projeto de games/apps</td></tr>
+        <tr><td>12:30 – 13:00</td><td>🧘‍♂️ Pausa curta</td></tr>
+        <tr><td>13:00 – 17:15</td><td>💼 Trabalho</td></tr>
+        <tr><td>17:15 – 18:00</td><td>🎧 Descompressão</td></tr>
+        <tr><td>18:00 – 19:00</td><td>🏋️‍♂️ Academia</td></tr>
+        <tr><td>19:00 – 20:00</td><td>🍽️ Jantar</td></tr>
+        <tr><td>20:00 – 21:00</td><td>🎮 Projeto de games/apps</td></tr>
+        <tr><td>21:00 – 22:00</td><td>📚 Leitura ou estudo</td></tr>
+        <tr><td>23:30 – 00:15</td><td>🗣️ Espanhol (estudo leve)</td></tr>
+        <tr><td>00:15 – 07:30</td><td>💤 Sono</td></tr>
+      </table>
+    `;
+
+    function mostrarRotina(dia) {
+      document.getElementById('schedule').innerHTML = dia === 'sexta' ? rotinaSexta : rotinaSegQui;
+    }
+
+    // Mostrar segunda a quinta como padrão
+    mostrarRotina('segunda');
+  </script>
 </body>
 </html>
