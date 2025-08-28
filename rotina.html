@@ -4,46 +4,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minha Rotina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
       color: #333;
-      max-width: 800px;
-      margin: auto;
       padding: 20px;
     }
-    h1 { text-align: center; color: #2c3e50; }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #fff;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    .schedule {
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      overflow: hidden;
+      animation: fadeIn 1.2s ease;
+    }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
     }
     th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
+      padding: 14px;
       text-align: center;
     }
-    th { background: #2980b9; color: white; }
-    tr:nth-child(even) { background: #ecf0f1; }
+    th {
+      background: #ff7e5f;
+      color: #fff;
+      font-size: 1.2em;
+      letter-spacing: 1px;
+    }
+    tr:nth-child(even) { background: rgba(255,255,255,0.7); }
+    tr:nth-child(odd) { background: rgba(255,255,255,0.5); }
+    td {
+      font-size: 1.05em;
+    }
+    .icon {
+      margin-right: 8px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #fff;
+      font-size: 0.9em;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
 <body>
-  <h1>Minha Rotina</h1>
-  <table>
-    <tr><th>Horário</th><th>Atividade</th></tr>
-    <tr><td>08:00 – 11:00</td><td>Trabalho</td></tr>
-    <tr><td>11:00 – 12:00</td><td>Almoço</td></tr>
-    <tr><td>12:00 – 12:45</td><td>Projeto de games/apps</td></tr>
-    <tr><td>12:45 – 13:00</td><td>Pausa curta</td></tr>
-    <tr><td>13:00 – 18:15</td><td>Trabalho</td></tr>
-    <tr><td>18:15 – 19:00</td><td>Descompressão</td></tr>
-    <tr><td>19:00 – 20:30</td><td>Projeto de games/apps</td></tr>
-    <tr><td>20:30 – 21:30</td><td>Descanso / lazer</td></tr>
-    <tr><td>21:50 – 23:00</td><td>Academia</td></tr>
-    <tr><td>23:00 – 23:30</td><td>Alongamento / relaxamento</td></tr>
-    <tr><td>23:30 – 00:15</td><td>Tempo livre ou ajustes no projeto</td></tr>
-    <tr><td>00:15 – 07:30</td><td>Sono</td></tr>
-  </table>
+  <h1>🌟 Minha Rotina Diário</h1>
+  <div class="schedule">
+    <table>
+      <tr>
+        <th>Horário</th>
+        <th>Atividade</th>
+      </tr>
+      <tr><td>08:00 – 11:00</td><td>💼 Trabalho</td></tr>
+      <tr><td>11:00 – 12:00</td><td>🍽️ Almoço</td></tr>
+      <tr><td>12:00 – 12:45</td><td>🎮 Projeto de games/apps</td></tr>
+      <tr><td>12:45 – 13:00</td><td>🧘‍♂️ Pausa curta</td></tr>
+      <tr><td>13:00 – 18:15</td><td>💼 Trabalho</td></tr>
+      <tr><td>18:15 – 19:00</td><td>🎧 Descompressão</td></tr>
+      <tr><td>19:00 – 20:30</td><td>🎮 Projeto de games/apps</td></tr>
+      <tr><td>20:30 – 21:30</td><td>☕ Descanso / lazer</td></tr>
+      <tr><td>21:50 – 23:00</td><td>🏋️‍♂️ Academia</td></tr>
+      <tr><td>23:00 – 23:30</td><td>🧘‍♀️ Alongamento / relaxamento</td></tr>
+      <tr><td>23:30 – 00:15</td><td>⚡ Tempo livre ou ajustes no projeto</td></tr>
+      <tr><td>00:15 – 07:30</td><td>💤 Sono</td></tr>
+    </table>
+  </div>
+  <footer>
+    Feito com ❤️ para manter o foco e a inspiração todos os dias
+  </footer>
 </body>
 </html>
